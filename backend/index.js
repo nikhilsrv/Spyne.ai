@@ -22,8 +22,8 @@ app.use(cookieParser());
 app.use("/api/user", userRoutes)
 app.use("/api/cars",carRoutes);
 
-app.get("/",(req,res)=>{
-    res.send("https://whimsical-kleicha-229c13.netlify.app")
+app.get("*",(req,res)=>{
+    res.send("https://spyne-ai-dpar.vercel.app/")
 })
 
 dbconnection();
