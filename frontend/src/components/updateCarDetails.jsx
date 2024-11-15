@@ -28,7 +28,7 @@ const UpdateCarDetails = () => {
 
       setUploadLooading(true);
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/cars/uploadImages`, {
-        headers:{"Authorissation":authenticatedUser?.token},
+        headers:{"Authorisation":authenticatedUser?.token},
         method: "POST",
         body: formData,
       });
