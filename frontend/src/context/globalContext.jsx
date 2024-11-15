@@ -14,7 +14,7 @@ export const GlobalContextProvider = ({ children }) => {
 
   const [uploadingImages,setUploadingImages]=useState([]);
   const [carsList,setCarsList]=useState([]);
-  const [car,setCar]=useState(null)
+  const [car,setCar]=useState(null);
 
   return (
     <GlobalContext.Provider

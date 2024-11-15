@@ -10,6 +10,7 @@ const AddCar = () => {
   const { addCar, loading } = useAddCar();
   const { setUploadingImages, uploadingImages,authenticatedUser } = useGlobalContext();
   const [uploadLoading, setUploadLooading] = useState(false);
+  
 
   const navigate=useNavigate();
   const handleUpload = async (e) => {
@@ -82,14 +83,16 @@ const AddCar = () => {
   useEffect(()=>{
     if(!authenticatedUser)
     navigate("/login");
-
   },[authenticatedUser]);
   
-  const handleSubmit = async (e) => {
+   const handleSubmit = async (e) => {
     e.preventDefault();
     await addCar(userInput);
     navigate("/user/allcars")
   };
+  useEffect(()=>{
+    setUploadingImages([]);
+  },[])
   return (
     <div className="w-screen h-screen flex  justify-center items-center">
       <div className="w-[80%]">
