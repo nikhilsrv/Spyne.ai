@@ -4,7 +4,7 @@ import { useGlobalContext } from "../context/globalContext";
 const useUpdateCarDetails = () => {
 
 	const [loading, setLoading] = useState(false);
-    const {car}=useGlobalContext()
+    const {car,authenticatedUser}=useGlobalContext()
 	
 	const updateCarDetails = async ({title,description,tags,images }) => {
 
@@ -15,7 +15,7 @@ const useUpdateCarDetails = () => {
 		try {
 			const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/updateCarDetails", {
 				method: "PUT",
-				headers: { "Content-Type": "application/json" },
+				headers: { "Content-Type": "application/json","Authorisation":authenticatedUser?.token },
 				body: JSON.stringify({id:car?._id,title,description,tags,images}),
 			});
 

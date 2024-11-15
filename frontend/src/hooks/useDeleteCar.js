@@ -3,6 +3,7 @@ import toast from "react-hot-toast";
 import { useGlobalContext } from "../context/globalContext";
 const useDeleteCar = () => {
 	const [loading, setLoading] = useState(false);
+	const {authenticatedUser}=useGlobalContext()
 	const deleteCar = async (id) => {
         alert("Are you sure you want to delete the car");
 
@@ -10,7 +11,7 @@ const useDeleteCar = () => {
 		try {
 			const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/deleteCar", {
 				method: "DELETE",
-				headers: { "Content-Type": "application/json" },
+				headers: { "Content-Type": "application/json","Authorisation":authenticatedUser?.token },
 				body: JSON.stringify({id}),
 			});
 

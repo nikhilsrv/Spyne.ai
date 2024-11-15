@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import { useGlobalContext } from "../context/globalContext";
 const useAddCar = () => {
 	const [loading, setLoading] = useState(false);
-	const {setAuthenticatedUser}=useGlobalContext();
+	const {setAuthenticatedUser,authenticatedUser}=useGlobalContext();
 
 
 	const addCar = async ({title,description,tags,images }) => {
@@ -15,7 +15,7 @@ const useAddCar = () => {
 		try {
 			const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/addCar", {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
+				headers: { "Content-Type": "application/json","Authorisation":authenticatedUser?.token },
 				body: JSON.stringify({title,description,tags,images}),
 			});
 

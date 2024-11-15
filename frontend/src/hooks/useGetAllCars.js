@@ -1,13 +1,16 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { useGlobalContext } from "../context/globalContext";
 const useGetAllCars = () => {
 	const [loading, setLoading] = useState(false);
+	const {authenticatedUser}=useGlobalContext();
+	
 	const getAllCars = async () => {
 
 		setLoading(true);
 		try {
 			
-			const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/getAllCars");
+			const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/getAllCars",{headers:{"Authorisation":authenticatedUser?.token}});
 			const data = await res.json();
 			if (data.error) {
 				throw new Error(data.error);

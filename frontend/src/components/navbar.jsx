@@ -8,7 +8,7 @@ const Navbar = () => {
     try {
 			const res = await fetch("https://spyne-ai-one.vercel.app/api/user/logout", {
 				method: "POST",
-				headers: { "Content-Type": "application/json" },
+				headers: { "Content-Type": "application/json","Authorisation":authenticatedUser?.token }
 			});
 
 			const data = await res.json();

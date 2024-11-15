@@ -24,6 +24,7 @@ const AddCar = () => {
 
       setUploadLooading(true);
       const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/uploadImages", {
+        headers:{"Authorisation":authenticatedUser?.token},
         method: "POST",
         body: formData,
       });
