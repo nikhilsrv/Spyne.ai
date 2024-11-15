@@ -10,9 +10,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 dotenv.config();
-app.use(cors({
-    origin: ["https://whimsical-kleicha-229c13.netlify.app","http://localhost:3000"]
-}));
+app.use(cors());
 app.use(bodyParser.urlencoded({extended:false}))
 app.use(bodyParser.json({limit:'50mb'}))
 
