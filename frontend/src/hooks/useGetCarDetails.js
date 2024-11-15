@@ -14,7 +14,7 @@ const useGetCarDetails = () => {
 
 		setLoading(true);
 		try {
-			 const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/getCarDetails", {
+			 const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/cars/getCarDetails`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json","Authorisation":authenticatedUser?.token },
 				body: JSON.stringify({id}),

@@ -10,7 +10,7 @@ const useGetAllCars = () => {
 		setLoading(true);
 		try {
 			
-			const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/getAllCars",{headers:{"Authorisation":authenticatedUser?.token}});
+			const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/cars/getAllCars`,{headers:{"Authorisation":authenticatedUser?.token}});
 			const data = await res.json();
 			if (data.error) {
 				throw new Error(data.error);

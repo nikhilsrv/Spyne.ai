@@ -6,7 +6,7 @@ const Navbar = () => {
   const { authenticatedUser,setAuthenticatedUser } = useGlobalContext();
   const handleClick=async()=>{
     try {
-			const res = await fetch("https://spyne-ai-one.vercel.app/api/user/logout", {
+			const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/logout`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json","Authorisation":authenticatedUser?.token }
 			});

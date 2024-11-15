@@ -13,7 +13,7 @@ const useSignup = () => {
 
 		setLoading(true);
 		try {
-			const res = await fetch("https://spyne-ai-one.vercel.app/api/user/login", {
+			const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/login`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({emailId, password,}),
@@ -25,6 +25,7 @@ const useSignup = () => {
 				throw new Error(data.error);
 			}
 			localStorage.setItem("car-user", JSON.stringify(data));
+			console.log(data)
 			setAuthenticatedUser(data);
 		} catch (error) {
 			toast.error(error.message);

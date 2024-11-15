@@ -10,4 +10,4 @@ const generateToken = (userId) => {
 
 };
 
-export default generateTokenAndSetCookie;
+export default generateToken;

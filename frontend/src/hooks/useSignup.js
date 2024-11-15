@@ -13,7 +13,7 @@ const useSignup = () => {
 
 		setLoading(true);
 		try {
-			const res = await fetch("https://spyne-ai-one.vercel.app/api/user/signup", {
+			const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/user/signup`, {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({fullName,emailId, password, confirmPassword,}),
