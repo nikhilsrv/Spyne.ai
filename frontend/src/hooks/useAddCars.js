@@ -13,7 +13,7 @@ const useAddCar = () => {
 
 		setLoading(true);
 		try {
-			const res = await fetch("/api/cars/addCar", {
+			const res = await fetch("https://spyne-ai-omega.vercel.app/api/cars/addCar", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({title,description,tags,images}),

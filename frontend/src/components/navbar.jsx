@@ -6,7 +6,7 @@ const Navbar = () => {
   const { authenticatedUser,setAuthenticatedUser } = useGlobalContext();
   const handleClick=async()=>{
     try {
-			const res = await fetch("/api/user/logout", {
+			const res = await fetch("https://spyne-ai-omega.vercel.app/api/user/logout", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 			});

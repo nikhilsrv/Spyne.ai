@@ -14,7 +14,7 @@ const useGetCarDetails = () => {
 
 		setLoading(true);
 		try {
-			const res = await fetch("/api/cars/getCarDetails", {
+			const res = await fetch("https://spyne-ai-omega.vercel.app/api/cars/getCarDetails", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({id}),

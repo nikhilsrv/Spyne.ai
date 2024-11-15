@@ -23,7 +23,7 @@ const AddCar = () => {
       }
 
       setUploadLooading(true);
-      const res = await fetch("/api/cars/uploadImages", {
+      const res = await fetch("https://spyne-ai-omega.vercel.app/api/cars/uploadImages", {
         method: "POST",
         body: formData,
       });

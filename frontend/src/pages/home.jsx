@@ -7,8 +7,8 @@ const Home = () => {
   const {authenticatedUser}=useGlobalContext();
   const navigate=useNavigate()
   useEffect(()=>{
-        if(!authenticatedUser)
-         navigate("/login")   
+        if(authenticatedUser)
+         navigate("/user/allcars")   
   },[authenticatedUser])  
   return (
     <div className="w-screen">
