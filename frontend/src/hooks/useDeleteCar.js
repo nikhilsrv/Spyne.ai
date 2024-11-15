@@ -8,7 +8,7 @@ const useDeleteCar = () => {
 
 		setLoading(true);
 		try {
-			const res = await fetch("https://spyne-ai-omega.vercel.app/api/cars/deleteCar", {
+			const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/deleteCar", {
 				method: "DELETE",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({id}),

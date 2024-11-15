@@ -7,7 +7,7 @@ const useGetAllCars = () => {
 		setLoading(true);
 		try {
 			
-			const res = await fetch("https://spyne-ai-omega.vercel.app/api/cars/getAllCars");
+			const res = await fetch("https://spyne-ai-one.vercel.app/api/cars/getAllCars");
 			const data = await res.json();
 			if (data.error) {
 				throw new Error(data.error);
